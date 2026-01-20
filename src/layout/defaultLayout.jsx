@@ -1,9 +1,13 @@
-import Home from "../pages/Home.jsx"
-export default function defaultLayout(){
+import { Outlet } from "react-router-dom"
+import Header from "../assets/components/Header.jsx"
+
+
+export default function DefaultLayout(){
 
     return(
         <>
-        <Home />
+        <Header />
+        <Outlet/>
         </>
     )
 }
