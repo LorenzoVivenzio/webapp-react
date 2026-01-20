@@ -20,15 +20,31 @@ export default function Home() {
     return (
         <>
             <h3 className="text-center mt-4">Lista dei film</h3>
-            <ul>
-                {
-                    movies.map((m) => {
-                        return <li key={m.id}>
-                            {m.title}
-                        </li>
-                    })
-                }
-            </ul>
+            <div className="container">
+                <div className="row">
+
+            {
+                movies.map((m) => (
+                <div key={m.id} className="col">
+                    <div className="card">
+                        <img src= {`http://localhost:3000/images/${m.image}`} className="card-img-top" alt={m.title}/>
+                            <div className="card-body">
+                                <h5 className="card-title">{m.title}</h5>
+                                <p className="card-text">Anno di rilascio: {m.release_year}</p>
+                                <a href="#" className="btn btn-primary">vedi dettagli</a>
+                            </div>
+                    </div>
+                    </div>
+                ))
+            }
+                    
+
+                    
+                </div>
+            </div>
+
+
+
         </>
     )
 }
