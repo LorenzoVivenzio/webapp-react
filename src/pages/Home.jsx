@@ -29,6 +29,7 @@ export default function Home() {
                     <div key={m.id} className="col">
                     <Card 
                     key={m.id}
+                    id={m.id}
                     image={m.image}
                     title={m.title}
                     release_year={m.release_year}

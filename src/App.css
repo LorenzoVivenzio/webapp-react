@@ -1,3 +1,11 @@
 img{
     height: 400px;
 }
+
+.img-banner{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner{
+    height: 50vh;
+}
