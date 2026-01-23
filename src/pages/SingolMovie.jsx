@@ -25,24 +25,49 @@ export default function SingolMovie() {
                 style={{
                     backgroundImage: `url(http://localhost:3000/images/${movie.image})`
                 }}>
-                
+
             </section>
 
-            <div class="card">
-                <div class="card-header">
-                   <h2>{movie.title}</h2> 
+            <div className="card">
+                <div className="card-header">
+                    <h2>{movie.title}</h2>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                     <figure>
-                        <blockquote class="blockquote">
+                        <blockquote className="blockquote">
                             <p>{movie.abstract} </p>
                         </blockquote>
-                        <figcaption class="blockquote-footer">
-                             <cite title="Source Title">Release year: {movie.release_year} </cite>
+                        <figcaption className="blockquote-footer">
+                            <cite title="Source Title">Release year: {movie.release_year} </cite>
                         </figcaption>
                     </figure>
                 </div>
             </div>
+
+            <section>
+                <h3 className="mt-5">Recensioni</h3>
+
+                {
+                    movie.reviews?.map((review) => (
+                        <div key = {review.id}
+                        className="card">
+                            <div className="card-header">
+                                {review.name}
+                            </div>
+                            <div className="card-body">
+                                <figure>
+                                    <blockquote className="blockquote">
+                                        <p>{review.text}</p>
+                                    </blockquote>
+                                    <figcaption className="blockquote-footer">
+                                        <cite title="Source Title">{review.created_at}</cite>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    ))
+                }
+            </section>
         </>
     )
 }
